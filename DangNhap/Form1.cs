@@ -12,12 +12,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace DangNhap
 {
+
     public partial class Form1 : Form
     {
 
 
         public Form1()
         {
+            this.AutoScaleMode = AutoScaleMode.Dpi;
+
             InitializeComponent();
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -38,22 +41,7 @@ namespace DangNhap
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text; // không Trim() để giữ khoảng trắng nếu thực sự cần
 
-            // Kiểm tra đơn giản - thay bằng kiểm tra DB nếu cần
-            if (IsValidCredentials(username, password))
-            {
-                // Mở Form2 và ẩn Form1 (hoặc Close() nếu không cần quay lại)
-                Form3 f3 = new Form3();
-                f3.StartPosition = FormStartPosition.CenterScreen;
-                f3.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Lỗi đăng nhập",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtPassword.Clear();
-                txtPassword.Focus();
-            }
+           
         }
         private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
         {
@@ -88,18 +76,7 @@ namespace DangNhap
             }
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            using (LinearGradientBrush brush = new LinearGradientBrush(
-           this.ClientRectangle,
-           Color.FromArgb(0, 102, 255),
-           Color.FromArgb(0, 204, 255),
-           LinearGradientMode.ForwardDiagonal))
-            {
-                e.Graphics.FillRectangle(brush, this.ClientRectangle);
-            }
-        }
-
+       
         private void CreateRoundedPanel()
         {
             panelLogin.BackColor = Color.White;
@@ -132,8 +109,6 @@ namespace DangNhap
 
             // Buttons: help on left, OK centered
             int buttonsY = rowY + rowSpacing * 2 + 10;
-            button1.Top = buttonsY;
-            button1.Left = margin;
             btnOK.Top = buttonsY;
             btnOK.Left = (panelLogin.Width - btnOK.Width) / 2;
 
@@ -229,18 +204,7 @@ namespace DangNhap
             string password = txtPassword.Text.Trim();
 
             // Kiểm tra tài khoản (ví dụ cứng để test)
-            if (username == "admin" && password == "123")
-            {
-                Form3 f3 = new Form3(); // tạo form mới
-                f3.StartPosition = FormStartPosition.CenterScreen; // mở giữa màn hình
-                f3.Show(); // hiển thị Form2
-                this.Hide(); // ẩn Form1
-            }
-            else
-            {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
 
         }
     }
