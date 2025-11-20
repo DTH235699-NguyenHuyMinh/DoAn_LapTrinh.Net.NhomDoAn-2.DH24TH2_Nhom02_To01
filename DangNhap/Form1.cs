@@ -26,6 +26,8 @@ namespace DangNhap
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.ClientSize = new Size(800, 500);
+            this.StartPosition = FormStartPosition.CenterScreen;
+
 
             // Đăng ký sự kiện
             btnOK.Click += BtnOK_Click;
@@ -141,7 +143,6 @@ namespace DangNhap
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             panelLogin.Size = new Size(400, 300);
             panelLogin.Location = new Point(
                 (this.ClientSize.Width - panelLogin.Width) / 2,
@@ -150,7 +151,26 @@ namespace DangNhap
             panelLogin.BackColor = Color.White;
 
             panelLogin.Region = new Region(GetRoundedPath(panelLogin.ClientRectangle, 30));
+
+            button1.Text = "x";                        // Chỉ chữ X
+            button1.Font = new Font("Arial", 14, FontStyle.Bold);
+            button1.ForeColor = Color.White;          // Chữ X màu đen
+            button1.BackColor = Color.Transparent;     // Nền nút trong suốt
+            button1.FlatStyle = FlatStyle.Flat;        // Bỏ viền
+            button1.FlatAppearance.BorderSize = 0;     // Không viền
+
+            // Kích thước và vị trí
+            button1.Width = 30;
+            button1.Height = 30;
+            button1.Top = 0;
+            button1.Left = this.ClientSize.Width - button1.Width; // góc trên bên phải
+            button1.TextAlign = ContentAlignment.MiddleCenter;   // chữ X căn giữa
+
+            // Giữ vị trí khi resize form
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         }
+
+        
 
 
 
@@ -201,10 +221,36 @@ namespace DangNhap
         private void btnOK_Click_1(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
-            string password = txtPassword.Text.Trim();
+            string password = txtPassword.Text;
 
-            // Kiểm tra tài khoản (ví dụ cứng để test)
-           
+            // Kiểm tra tài khoản (cứng để test)
+            if (IsValidCredentials(username, password))
+            {
+                // Tạo form 2
+                Form2 f2 = new Form2();
+                f2.Show();          // Mở Form2
+                this.Hide();         // Ẩn Form1
+            }
+            else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
+            }
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit(); // Dừng chương trình, đóng tất cả form
+            }
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
