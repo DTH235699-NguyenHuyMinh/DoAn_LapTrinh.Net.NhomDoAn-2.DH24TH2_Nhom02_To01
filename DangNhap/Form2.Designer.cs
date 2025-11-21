@@ -77,6 +77,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "NHÂN VIÊN";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -87,6 +88,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "CẤP QUYỀN";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -97,6 +99,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "TIỀN LƯƠNG";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -107,6 +110,7 @@
             this.button4.TabIndex = 5;
             this.button4.Text = "PHÒNG BAN";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -117,15 +121,20 @@
             this.button5.TabIndex = 6;
             this.button5.Text = "CHẤM CÔNG";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(12, 405);
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button6.AutoSize = true;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button6.Location = new System.Drawing.Point(21, 403);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(75, 26);
             this.button6.TabIndex = 7;
-            this.button6.Text = "QUAY LẠI";
+            this.button6.Text = "THOÁT";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form2
             // 
