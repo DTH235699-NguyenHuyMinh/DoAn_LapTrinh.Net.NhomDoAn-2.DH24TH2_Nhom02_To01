@@ -51,15 +51,18 @@ namespace DangNhap
             // 
             // panelLogin
             // 
+            this.panelLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelLogin.Controls.Add(this.txtUsername);
             this.panelLogin.Controls.Add(this.txtPassword);
             this.panelLogin.Controls.Add(this.btnOK);
             this.panelLogin.Controls.Add(this.label3);
             this.panelLogin.Controls.Add(this.label2);
             this.panelLogin.Controls.Add(this.label1);
-            this.panelLogin.Location = new System.Drawing.Point(212, 39);
+            this.panelLogin.Location = new System.Drawing.Point(255, 93);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(327, 379);
+            this.panelLogin.Size = new System.Drawing.Size(309, 332);
             this.panelLogin.TabIndex = 0;
             this.panelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.Login_Paint);
             // 
@@ -119,13 +122,12 @@ namespace DangNhap
             this.label1.Size = new System.Drawing.Size(202, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG NHẬP";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.Location = new System.Drawing.Point(729, -3);
+            this.button1.Location = new System.Drawing.Point(784, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(36, 35);
             this.button1.TabIndex = 1;
@@ -136,8 +138,8 @@ namespace DangNhap
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 430);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(818, 497);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panelLogin);
             this.Name = "Form1";
