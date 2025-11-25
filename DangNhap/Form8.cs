@@ -15,10 +15,17 @@ namespace DangNhap
     {
         private string currentEmpId;
         Database db = new Database();
+        private AutoScaler autoScaler;
+        private Dictionary<Control, Rectangle> originalControlBounds = new Dictionary<Control, Rectangle>();
+        private Dictionary<Control, float> originalControlFontSizes = new Dictionary<Control, float>();
+
+
         public Form8(String empId)
         {
             InitializeComponent();
+            autoScaler = new AutoScaler(this);
             this.currentEmpId = empId;
+            this.StartPosition = FormStartPosition.CenterScreen; // Vị trí này đã có sẵn
         }
 
         private void Form8_Load(object sender, EventArgs e)
@@ -207,9 +214,50 @@ namespace DangNhap
             }
         }
 
-        private void lblStatus_Click(object sender, EventArgs e)
+
+        private void tabAttendance_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Ẩn form hiện tại
+            this.Hide();
+
+            // Quay về Form1 (màn hình đăng nhập)
+            Form1 login = new Form1();
+            login.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Ẩn form hiện tại
+            this.Hide();
+
+            // Quay về Form1 (màn hình đăng nhập)
+            Form1 login = new Form1();
+            login.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Ẩn form hiện tại
+            this.Hide();
+
+            // Quay về Form1 (màn hình đăng nhập)
+            Form1 login = new Form1();
+            login.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Ẩn form hiện tại
+            this.Hide();
+
+            // Quay về Form1 (màn hình đăng nhập)
+            Form1 login = new Form1();
+            login.Show();
         }
     }
 }
