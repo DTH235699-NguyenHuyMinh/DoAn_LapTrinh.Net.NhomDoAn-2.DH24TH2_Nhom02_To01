@@ -264,6 +264,16 @@ namespace DangNhap
             Form2 ql = new Form2();
             ql.Show();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -328,5 +328,9 @@ namespace DangNhap
             ql.Show();
         }
 
+        private void txtNam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
