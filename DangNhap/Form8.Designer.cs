@@ -34,6 +34,7 @@ namespace DangNhap
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAttendance = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@ namespace DangNhap
             this.lblTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabProfile = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnSaveProfile = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,6 +55,7 @@ namespace DangNhap
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabSalary = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.dgvHistory = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSalaryResult = new System.Windows.Forms.Label();
@@ -62,6 +65,7 @@ namespace DangNhap
             this.cboMonth = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabAccount = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.btnChangePass = new System.Windows.Forms.Button();
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -69,10 +73,6 @@ namespace DangNhap
             this.label10 = new System.Windows.Forms.Label();
             this.txtOldPass = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabAttendance.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -117,6 +117,16 @@ namespace DangNhap
             this.tabAttendance.UseVisualStyleBackColor = true;
             this.tabAttendance.Click += new System.EventHandler(this.tabAttendance_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(8, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 27);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Thoát ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -133,7 +143,7 @@ namespace DangNhap
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(653, 106);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(654, 106);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // btnCheckOut
@@ -143,7 +153,7 @@ namespace DangNhap
             this.btnCheckOut.Enabled = false;
             this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Location = new System.Drawing.Point(330, 4);
+            this.btnCheckOut.Location = new System.Drawing.Point(331, 4);
             this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(319, 98);
@@ -162,7 +172,7 @@ namespace DangNhap
             this.btnCheckIn.Location = new System.Drawing.Point(4, 4);
             this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(318, 98);
+            this.btnCheckIn.Size = new System.Drawing.Size(319, 98);
             this.btnCheckIn.TabIndex = 2;
             this.btnCheckIn.Text = "CHECK IN\r\n(Vào làm)";
             this.btnCheckIn.UseVisualStyleBackColor = false;
@@ -236,6 +246,15 @@ namespace DangNhap
             this.tabProfile.TabIndex = 1;
             this.tabProfile.Text = "Hồ Sơ Của Tôi";
             this.tabProfile.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(8, 429);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 27);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Thoát ";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // btnSaveProfile
             // 
@@ -369,6 +388,15 @@ namespace DangNhap
             this.tabSalary.Text = "Lương & Lịch Sử";
             this.tabSalary.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(8, 429);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 27);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Thoát ";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // dgvHistory
             // 
             this.dgvHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -498,6 +526,16 @@ namespace DangNhap
             this.tabAccount.Text = "Tài Khoản";
             this.tabAccount.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(8, 429);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 27);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Thoát ";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // btnChangePass
             // 
             this.btnChangePass.BackColor = System.Drawing.Color.SteelBlue;
@@ -571,44 +609,6 @@ namespace DangNhap
             this.label9.Size = new System.Drawing.Size(114, 23);
             this.label9.TabIndex = 0;
             this.label9.Text = "Mật khẩu cũ:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(8, 430);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Thoát ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(8, 429);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Thoát ";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(8, 429);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 27);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Thoát ";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(8, 429);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 27);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Thoát ";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form8
             // 
