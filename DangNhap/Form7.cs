@@ -21,5 +21,15 @@ namespace DangNhap
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Ẩn form hiện tại
+            this.Hide();
+
+            // Quay về Form2 (màn hình đăng nhập)
+            Form2 ql = new Form2();
+            ql.Show();
+        }
     }
 }

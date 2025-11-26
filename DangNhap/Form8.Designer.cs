@@ -35,9 +35,6 @@ namespace DangNhap
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAttendance = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCheckOut = new System.Windows.Forms.Button();
-            this.btnCheckIn = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,14 +70,17 @@ namespace DangNhap
             this.label10 = new System.Windows.Forms.Label();
             this.txtOldPass = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnCheckIn = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabAttendance.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tabProfile.SuspendLayout();
             this.tabSalary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabAccount.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -126,57 +126,6 @@ namespace DangNhap
             this.button1.Text = "Thoát ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.btnCheckOut, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnCheckIn, 0, 0);
-            this.tableLayoutPanel2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(79, 260);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(654, 106);
-            this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.BackColor = System.Drawing.Color.Salmon;
-            this.btnCheckOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCheckOut.Enabled = false;
-            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Location = new System.Drawing.Point(331, 4);
-            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(319, 98);
-            this.btnCheckOut.TabIndex = 3;
-            this.btnCheckOut.Text = "CHECK OUT\r\n(Về)";
-            this.btnCheckOut.UseVisualStyleBackColor = false;
-            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
-            // 
-            // btnCheckIn
-            // 
-            this.btnCheckIn.AutoSize = true;
-            this.btnCheckIn.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnCheckIn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Location = new System.Drawing.Point(4, 4);
-            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(319, 98);
-            this.btnCheckIn.TabIndex = 2;
-            this.btnCheckIn.Text = "CHECK IN\r\n(Vào làm)";
-            this.btnCheckIn.UseVisualStyleBackColor = false;
-            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
             // 
             // lblStatus
             // 
@@ -610,6 +559,58 @@ namespace DangNhap
             this.label9.TabIndex = 0;
             this.label9.Text = "Mật khẩu cũ:";
             // 
+            // btnCheckIn
+            // 
+            this.btnCheckIn.AutoSize = true;
+            this.btnCheckIn.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCheckIn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.Location = new System.Drawing.Point(4, 4);
+            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Size = new System.Drawing.Size(319, 98);
+            this.btnCheckIn.TabIndex = 2;
+            this.btnCheckIn.Text = "CHECK IN\r\n(Vào làm)";
+            this.btnCheckIn.UseVisualStyleBackColor = false;
+            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.BackColor = System.Drawing.Color.Salmon;
+            this.btnCheckOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCheckOut.Enabled = false;
+            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Location = new System.Drawing.Point(331, 4);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(319, 98);
+            this.btnCheckOut.TabIndex = 3;
+            this.btnCheckOut.Text = "CHECK OUT\r\n(Về)";
+            this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.btnCheckOut, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnCheckIn, 0, 0);
+            this.tableLayoutPanel2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(79, 260);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(654, 106);
+            this.tableLayoutPanel2.TabIndex = 6;
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -624,8 +625,6 @@ namespace DangNhap
             this.tabControl1.ResumeLayout(false);
             this.tabAttendance.ResumeLayout(false);
             this.tabAttendance.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.tabProfile.ResumeLayout(false);
             this.tabProfile.PerformLayout();
             this.tabSalary.ResumeLayout(false);
@@ -634,6 +633,8 @@ namespace DangNhap
             this.panel1.PerformLayout();
             this.tabAccount.ResumeLayout(false);
             this.tabAccount.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -645,8 +646,6 @@ namespace DangNhap
         private System.Windows.Forms.TabPage tabProfile;
         private System.Windows.Forms.TabPage tabSalary;
         private System.Windows.Forms.TabPage tabAccount;
-        private System.Windows.Forms.Button btnCheckOut;
-        private System.Windows.Forms.Button btnCheckIn;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label6;
@@ -676,10 +675,12 @@ namespace DangNhap
         private System.Windows.Forms.TextBox txtOldPass;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
-        private TableLayoutPanel tableLayoutPanel2;
         private Button button1;
         private Button button2;
         private Button button3;
         private Button button4;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Button btnCheckOut;
+        private Button btnCheckIn;
     }
 }
