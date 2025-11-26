@@ -32,12 +32,12 @@ namespace DangNhap
             this.txtNgayCong.TextChanged += TinhLuongTuDong;
             this.cboNhanVien.SelectedIndexChanged += TinhLuongTuDong;
 
-            this.btnThem.Click += new EventHandler(button1_Click); // Nút Thêm
-            this.btnXoa.Click += new EventHandler(button2_Click); // Nút Xóa
-            this.btnSua.Click += new EventHandler(button3_Click); // Nút Sửa
-            this.btnHuy.Click += new EventHandler(button4_Click); // Nút Hủy
-            this.btnThoat.Click += new EventHandler(button5_Click); // Nút Thoát
-            this.btnTim.Click += new EventHandler(button6_Click); // Nút Tìm kiếm
+            this.btnThem.Click += new EventHandler(btnThem_Click); // Nút Thêm
+            this.btnXoa.Click += new EventHandler(btnXoa_Click); // Nút Xóa
+            this.btnSua.Click += new EventHandler(btnSua_Click); // Nút Sửa
+            this.btnHuy.Click += new EventHandler(btnHuy_Click); // Nút Hủy
+            this.btnThoat.Click += new EventHandler(btnThoat_Click); // Nút Thoát
+            this.btnTim.Click += new EventHandler(btnTim_Click); // Nút Tìm kiếm
         }
 
         private void Form4_Load(object sender, EventArgs e)
