@@ -68,7 +68,7 @@ namespace DangNhap
                     c.SetBounds(newX, newY, newW, newH);
 
                     float newFontSize = originalFontSizes[c] * ((xRatio + yRatio) / 2f);
-                    c.Font = new Font(c.Font.FontFamily, newFontSize);
+                    c.Font = new Font(c.Font.FontFamily, newFontSize, c.Font.Style);
                 }
 
                 if (c.Controls.Count > 0)

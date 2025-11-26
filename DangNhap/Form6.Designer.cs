@@ -64,14 +64,23 @@
             // 
             // dgvUsers
             // 
+            this.dgvUsers.AllowUserToAddRows = false;
+            this.dgvUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvUsers.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Location = new System.Drawing.Point(43, 226);
             this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
+            this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsers.Size = new System.Drawing.Size(720, 179);
             this.dgvUsers.TabIndex = 4;
-            this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
+            this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
             // label2
             // 
