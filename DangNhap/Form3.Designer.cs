@@ -217,7 +217,7 @@
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnTim.Location = new System.Drawing.Point(245, 279);
+            this.btnTim.Location = new System.Drawing.Point(259, 282);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(66, 22);
             this.btnTim.TabIndex = 18;
@@ -327,11 +327,11 @@
             // 
             this.dgvNhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhanVien.Location = new System.Drawing.Point(26, 305);
+            this.dgvNhanVien.Location = new System.Drawing.Point(26, 311);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.RowTemplate.Height = 24;
-            this.dgvNhanVien.Size = new System.Drawing.Size(747, 120);
+            this.dgvNhanVien.Size = new System.Drawing.Size(747, 114);
             this.dgvNhanVien.TabIndex = 29;
             // 
             // groupBox2
@@ -371,10 +371,11 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(122, 280);
+            this.txtTimKiem.Location = new System.Drawing.Point(136, 283);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(117, 22);
             this.txtTimKiem.TabIndex = 32;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // Form3
             // 

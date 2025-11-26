@@ -209,7 +209,7 @@
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(244, 245);
+            this.btnTim.Location = new System.Drawing.Point(253, 246);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(78, 22);
             this.btnTim.TabIndex = 19;
@@ -230,7 +230,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(121, 246);
+            this.txtTimKiem.Location = new System.Drawing.Point(130, 245);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(117, 22);
             this.txtTimKiem.TabIndex = 21;

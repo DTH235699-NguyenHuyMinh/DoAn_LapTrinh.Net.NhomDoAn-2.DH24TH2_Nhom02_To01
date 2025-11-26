@@ -221,8 +221,12 @@ namespace DangNhap
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Thoát?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                this.Close();
+            // Ẩn form hiện tại
+            this.Hide();
+
+            // Quay về Form2
+            Form2 ql = new Form2();
+            ql.Show();
         }
 
         // Hàm thừa từ code cũ của bạn, giữ lại để không báo lỗi
