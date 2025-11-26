@@ -59,20 +59,28 @@ namespace DangNhap
         }
 
         // --- 2. Tải dữ liệu chấm công lên lưới ---
-        private void LoadDataToGrid()
+        // Sửa hàm này để nhận tham số keyword
+        private void LoadDataToGrid(string keyword = "")
         {
             try
             {
-                // JOIN bảng attendance và employees để lấy tên nhân viên
                 string query = @"SELECT a.atd_id, a.emp_id, e.fullname, a.date, a.checkin, a.checkout, a.note, a.rating 
-                                 FROM attendance a 
-                                 JOIN employees e ON a.emp_id = e.id
-                                 ORDER BY a.date DESC"; // Mới nhất lên đầu
+                         FROM attendance a 
+                         JOIN employees e ON a.emp_id = e.id";
+
+                // Thêm điều kiện lọc nếu có từ khóa
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    // Tìm theo Mã NV hoặc Tên NV
+                    query += $" WHERE a.emp_id LIKE N'%{keyword}%' OR e.fullname LIKE N'%{keyword}%'";
+                }
+
+                query += " ORDER BY a.date DESC"; // Sắp xếp sau khi lọc
 
                 DataTable dt = db.GetDataTable(query);
                 dgvAttendance.DataSource = dt;
 
-                // Đặt tên cột tiếng Việt
+                // ... (phần đặt tên cột giữ nguyên) ...
                 dgvAttendance.Columns["atd_id"].HeaderText = "ID";
                 dgvAttendance.Columns["emp_id"].HeaderText = "Mã NV";
                 dgvAttendance.Columns["fullname"].HeaderText = "Họ Tên";
@@ -82,9 +90,7 @@ namespace DangNhap
                 dgvAttendance.Columns["note"].HeaderText = "Ghi Chú";
                 dgvAttendance.Columns["rating"].HeaderText = "Đánh Giá";
 
-                // Ẩn cột ID chấm công (không cần hiển thị)
                 dgvAttendance.Columns["atd_id"].Visible = false;
-
                 ClearInputFields();
             }
             catch (Exception ex)
@@ -229,5 +235,17 @@ namespace DangNhap
         // Giữ lại sự kiện cũ nếu Designer đã lỡ tạo, để tránh lỗi
         private void label1_Click(object sender, EventArgs e) { }
         private void button1_Click(object sender, EventArgs e) { btnThoat_Click(sender, e); }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text.Trim();
+            LoadDataToGrid(key);
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text.Trim();
+            LoadDataToGrid(key);
+        }
     }
 }
