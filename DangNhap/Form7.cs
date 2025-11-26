@@ -16,13 +16,16 @@ namespace DangNhap
     {
         // Gọi class kết nối Database (Giả sử bạn đã có class này từ các form trước)
         Database db = new Database();
-
+        private AutoScaler autoScaler;
         // Biến lưu mã chấm công đang chọn (để sửa/xóa)
         private string selectedAtdId = "";
 
         public Form7()
         {
             InitializeComponent();
+            autoScaler = new AutoScaler(this);
+            this.StartPosition = FormStartPosition.CenterScreen;
+           
         }
 
         private void Form7_Load(object sender, EventArgs e)

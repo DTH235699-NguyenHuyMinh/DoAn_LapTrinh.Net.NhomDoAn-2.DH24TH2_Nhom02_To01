@@ -20,6 +20,7 @@ namespace DangNhap
         {
             InitializeComponent();
             autoScaler = new AutoScaler(this);
+            this.StartPosition = FormStartPosition.CenterScreen;
             cboRole.SelectedIndex = 1; // Mặc định chọn 'user'
         }
 
