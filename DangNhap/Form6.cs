@@ -25,12 +25,36 @@ namespace DangNhap
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            LoadEmployeesToComboBox();
             LoadDataToGrid();
         }
 
         /// <summary>
         /// Tải dữ liệu từ bảng users và thông tin nhân viên (fullname) lên DataGridView
         /// </summary>
+        // --- THÊM HÀM MỚI NÀY VÀO ---
+        private void LoadEmployeesToComboBox()
+        {
+            try
+            {
+                // Lấy ID và Tên để hiển thị (ví dụ: NV01 - Nguyễn Văn A)
+                string query = "SELECT id, fullname FROM employees";
+                DataTable dt = db.GetDataTable(query);
+
+                // Tạo cột hiển thị gộp
+                dt.Columns.Add("DisplayInfo", typeof(string), "id + ' - ' + fullname");
+
+                cboEmpId.DataSource = dt;
+                cboEmpId.DisplayMember = "DisplayInfo"; // Hiển thị: NV01 - Tên
+                cboEmpId.ValueMember = "id";            // Giá trị ngầm: NV01
+                cboEmpId.SelectedIndex = -1;            // Chưa chọn gì
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải nhân viên: " + ex.Message);
+            }
+        }
+
         private void LoadDataToGrid()
         {
             try
@@ -61,11 +85,12 @@ namespace DangNhap
         /// </summary>
         private void ClearInputFields()
         {
-            txtEmpId.Clear();
+            cboEmpId.SelectedIndex = -1; // <-- Thêm dòng mới: Reset ComboBox
+            cboEmpId.Enabled = true;     // <-- Thêm dòng mới: Mở khóa cho phép chọn lại
             txtUsername.Clear();
             txtPassword.Clear();
             cboRole.SelectedIndex = 1; // Đặt lại về 'user'
-            txtEmpId.Focus();
+            cboEmpId.Focus();    
         }
 
         // Xử lý khi click vào một dòng trên DataGridView
@@ -76,15 +101,15 @@ namespace DangNhap
                 DataGridViewRow row = dgvUsers.Rows[e.RowIndex];
 
                 // Gán dữ liệu vào các controls
-                txtEmpId.Text = row.Cells["emp_id"].Value.ToString();
+                string selectedId = row.Cells["emp_id"].Value.ToString();
+                cboEmpId.SelectedValue = selectedId;
                 txtUsername.Text = row.Cells["username"].Value.ToString();
-                // Lưu ý: Mật khẩu được ẩn, nên tạm thời không lấy nếu cột password.Visible = false;
-                // Nếu muốn lấy mật khẩu (chỉ phục vụ demo):
+                
                 txtPassword.Text = row.Cells["password"].Value.ToString(); 
                 cboRole.Text = row.Cells["role"].Value.ToString();
 
                 // Khóa trường Mã NV khi đang sửa/xóa
-                txtEmpId.Enabled = false;
+                cboEmpId.Enabled = false;
             }
         }
 
@@ -95,13 +120,17 @@ namespace DangNhap
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             ClearInputFields();
-            txtEmpId.Enabled = true; // Cho phép nhập lại mã NV mới
+            cboEmpId.Enabled = true; // Cho phép nhập lại mã NV mới
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string empId = txtEmpId.Text.Trim();
-            string username = txtUsername.Text.Trim();
+            if (cboEmpId.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên!", "Cảnh báo");
+                return;
+            }
+            string empId = cboEmpId.SelectedValue.ToString(); string username = txtUsername.Text.Trim();
             string password = txtPassword.Text; // Lưu ý: Cần mã hóa trong thực tế
             string role = cboRole.Text.Trim();
 
@@ -111,17 +140,6 @@ namespace DangNhap
                 return;
             }
 
-            // 1. Kiểm tra Mã NV có tồn tại trong bảng employees không
-            object checkEmp = db.ExecuteScalar("SELECT COUNT(*) FROM employees WHERE id = @EmpId", new SqlParameter[]
-            {
-                new SqlParameter("@EmpId", empId)
-            });
-
-            if (checkEmp == null || (int)checkEmp == 0)
-            {
-                MessageBox.Show("Mã nhân viên không tồn tại trong hệ thống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             // 2. Kiểm tra tài khoản đã tồn tại chưa
             object checkUser = db.ExecuteScalar("SELECT COUNT(*) FROM users WHERE emp_id = @EmpId OR username = @Username", new SqlParameter[]
@@ -159,7 +177,12 @@ namespace DangNhap
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string empId = txtEmpId.Text.Trim(); // Không cho sửa, nhưng dùng để định danh
+            if (cboEmpId.SelectedValue == null)
+            {
+                MessageBox.Show("Chưa chọn nhân viên!", "Lỗi");
+                return;
+            }
+            string empId = cboEmpId.SelectedValue.ToString();
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
             string role = cboRole.Text.Trim();
@@ -193,8 +216,12 @@ namespace DangNhap
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string empId = txtEmpId.Text.Trim();
-
+            if (cboEmpId.SelectedValue == null)
+            {
+                MessageBox.Show("Chưa chọn nhân viên!", "Lỗi");
+                return;
+            }
+            string empId = cboEmpId.SelectedValue.ToString();
             if (string.IsNullOrEmpty(empId))
             {
                 MessageBox.Show("Vui lòng chọn user cần xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

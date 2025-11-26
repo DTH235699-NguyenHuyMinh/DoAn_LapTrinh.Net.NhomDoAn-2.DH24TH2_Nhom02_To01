@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtEmpId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.cboEmpId = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -93,13 +93,6 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Mã Nhân Viên:";
             // 
-            // txtEmpId
-            // 
-            this.txtEmpId.Location = new System.Drawing.Point(155, 81);
-            this.txtEmpId.Name = "txtEmpId";
-            this.txtEmpId.Size = new System.Drawing.Size(200, 22);
-            this.txtEmpId.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -113,9 +106,9 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(155, 121);
+            this.txtUsername.Location = new System.Drawing.Point(155, 124);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(200, 22);
+            this.txtUsername.Size = new System.Drawing.Size(159, 22);
             this.txtUsername.TabIndex = 6;
             // 
             // label4
@@ -153,9 +146,9 @@
             this.cboRole.Items.AddRange(new object[] {
             "admin",
             "user"});
-            this.cboRole.Location = new System.Drawing.Point(500, 121);
+            this.cboRole.Location = new System.Drawing.Point(500, 122);
             this.cboRole.Name = "cboRole";
-            this.cboRole.Size = new System.Drawing.Size(200, 24);
+            this.cboRole.Size = new System.Drawing.Size(143, 24);
             this.cboRole.TabIndex = 8;
             // 
             // btnThem
@@ -225,11 +218,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cboEmpId
+            // 
+            this.cboEmpId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEmpId.FormattingEnabled = true;
+            this.cboEmpId.Location = new System.Drawing.Point(155, 81);
+            this.cboEmpId.Name = "cboEmpId";
+            this.cboEmpId.Size = new System.Drawing.Size(215, 24);
+            this.cboEmpId.TabIndex = 20;
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboEmpId);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnXoa);
@@ -241,7 +244,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEmpId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.label1);
@@ -258,7 +260,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEmpId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label4;
@@ -274,5 +275,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cboEmpId;
     }
 }
