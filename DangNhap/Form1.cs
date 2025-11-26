@@ -129,6 +129,8 @@ namespace DangNhap
             return path;
         }
 
+        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             panelLogin.Size = new Size(400, 300);
