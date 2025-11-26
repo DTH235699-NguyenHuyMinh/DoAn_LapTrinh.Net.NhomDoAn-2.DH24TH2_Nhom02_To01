@@ -280,5 +280,15 @@ namespace DangNhap
                 if (c.HasChildren) ResizeAllControls(c, scaleX, scaleY);
             }
         }
+
+        private void txtMoTa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
