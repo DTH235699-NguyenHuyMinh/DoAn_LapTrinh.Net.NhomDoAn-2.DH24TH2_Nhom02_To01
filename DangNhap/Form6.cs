@@ -14,11 +14,12 @@ namespace DangNhap
     public partial class Form6 : Form
     {
         Database db = new Database();
+        private AutoScaler autoScaler;
+
         public Form6()
         {
             InitializeComponent();
-            cboRole.Items.Add("admin");
-            cboRole.Items.Add("user");
+            autoScaler = new AutoScaler(this);
             cboRole.SelectedIndex = 1; // Mặc định chọn 'user'
         }
 
@@ -46,10 +47,6 @@ namespace DangNhap
                 dgvUsers.Columns["username"].HeaderText = "Username";
                 dgvUsers.Columns["password"].HeaderText = "Mật Khẩu";
                 dgvUsers.Columns["role"].HeaderText = "Quyền";
-
-                // Ẩn cột mật khẩu vì lý do bảo mật (chỉ hiển thị tạm thời trong form này)
-                // Trong thực tế, bạn không nên lấy cột này ra
-                dgvUsers.Columns["password"].Visible = false;
 
                 ClearInputFields();
             }
@@ -83,7 +80,7 @@ namespace DangNhap
                 txtUsername.Text = row.Cells["username"].Value.ToString();
                 // Lưu ý: Mật khẩu được ẩn, nên tạm thời không lấy nếu cột password.Visible = false;
                 // Nếu muốn lấy mật khẩu (chỉ phục vụ demo):
-                // txtPassword.Text = row.Cells["password"].Value.ToString(); 
+                txtPassword.Text = row.Cells["password"].Value.ToString(); 
                 cboRole.Text = row.Cells["role"].Value.ToString();
 
                 // Khóa trường Mã NV khi đang sửa/xóa
@@ -239,11 +236,6 @@ namespace DangNhap
             // Quay về Form2 (màn hình đăng nhập)
             Form2 ql = new Form2();
             ql.Show();
-        }
-
-        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

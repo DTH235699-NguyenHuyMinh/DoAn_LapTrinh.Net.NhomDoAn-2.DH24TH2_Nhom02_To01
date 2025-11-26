@@ -160,7 +160,7 @@ namespace DangNhap
         // --- NÚT BẤM (BUTTON) ---
 
         // Nút THÊM (button1)
-        private void button1_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
             if (cboNhanVien.SelectedValue == null || string.IsNullOrEmpty(txtNgayCong.Text))
             {
@@ -196,7 +196,7 @@ namespace DangNhap
         }
 
         // Nút XÓA (button2)
-        private void button2_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(currentSlrId)) return;
             if (MessageBox.Show("Xóa?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -215,7 +215,7 @@ namespace DangNhap
         }
 
         // Nút SỬA (button3)
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(currentSlrId)) return;
             try
@@ -238,11 +238,10 @@ namespace DangNhap
             catch (Exception ex) { MessageBox.Show("Lỗi: " + ex.Message); }
         }
 
-        private void button4_Click(object sender, EventArgs e) { ResetControls(); LoadDataToGrid(); } // HỦY
-        private void button5_Click(object sender, EventArgs e) { if (MessageBox.Show("Thoát?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes) Application.Exit(); } // THOÁT
+        private void btnHuy_Click(object sender, EventArgs e) { ResetControls(); LoadDataToGrid(); } // HỦY
 
         // Nút TÌM KIẾM (button6)
-        private void button6_Click(object sender, EventArgs e)
+        private void btnTim_Click(object sender, EventArgs e)
         {
             string keyword = txtTimKiem.Text.Trim(); // Cần có TextBox txtTimKiem trên form
             if (string.IsNullOrEmpty(keyword) && cboNhanVien.Text != "") keyword = cboNhanVien.Text;
@@ -324,6 +323,15 @@ namespace DangNhap
             }
         }
 
-       
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            // Ẩn form hiện tại
+            this.Hide();
+
+            // Quay về Form2 
+            Form2 ql = new Form2();
+            ql.Show();
+        }
+
     }
 }

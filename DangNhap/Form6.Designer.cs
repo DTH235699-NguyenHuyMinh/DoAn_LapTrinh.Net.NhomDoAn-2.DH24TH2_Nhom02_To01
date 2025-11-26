@@ -64,14 +64,23 @@
             // 
             // dgvUsers
             // 
+            this.dgvUsers.AllowUserToAddRows = false;
+            this.dgvUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvUsers.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Location = new System.Drawing.Point(43, 226);
             this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.Size = new System.Drawing.Size(720, 179);
+            this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsers.Size = new System.Drawing.Size(720, 183);
             this.dgvUsers.TabIndex = 4;
-            this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
+            this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
             // label2
             // 
@@ -152,7 +161,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnThem.Location = new System.Drawing.Point(97, 178);
+            this.btnThem.Location = new System.Drawing.Point(76, 180);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(101, 25);
             this.btnThem.TabIndex = 9;
@@ -163,7 +172,7 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnSua.Location = new System.Drawing.Point(267, 178);
+            this.btnSua.Location = new System.Drawing.Point(213, 181);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(101, 25);
             this.btnSua.TabIndex = 10;
@@ -174,7 +183,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnXoa.Location = new System.Drawing.Point(612, 178);
+            this.btnXoa.Location = new System.Drawing.Point(490, 181);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(101, 25);
             this.btnXoa.TabIndex = 11;
@@ -185,7 +194,7 @@
             // btnLamMoi
             // 
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnLamMoi.Location = new System.Drawing.Point(445, 178);
+            this.btnLamMoi.Location = new System.Drawing.Point(351, 181);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(101, 25);
             this.btnLamMoi.TabIndex = 12;
@@ -207,9 +216,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 411);
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(628, 179);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
+            this.button1.Size = new System.Drawing.Size(101, 27);
             this.button1.TabIndex = 19;
             this.button1.Text = "Thoát ";
             this.button1.UseVisualStyleBackColor = true;

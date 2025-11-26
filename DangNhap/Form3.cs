@@ -265,7 +265,12 @@ namespace DangNhap
         // Button 2: THOÁT
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Thoát chương trình?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes) Application.Exit();
+            // Ẩn form hiện tại
+            this.Hide();
+
+            // Quay về Form2
+            Form2 ql = new Form2();
+            ql.Show();
         }
 
         // Button 1: TÌM KIẾM
