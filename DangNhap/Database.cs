@@ -12,8 +12,8 @@ namespace DangNhap // Đảm bảo namespace này giống namespace trong Form1 
     public class Database
     {
         // Chuỗi kết nối chuẩn cho máy của bạn
-        private string connectionString = @"Data Source=DESKTOP-DO2I143;Initial Catalog=HR_DATABASE_NET;Integrated Security=True";
-        //private string connectionString = @"Data Source=LAPTOP-3VDNARNT;Initial Catalog=HR_DATABASE_NET;Integrated Security=True";
+        //private string connectionString = @"Data Source=DESKTOP-DO2I143;Initial Catalog=HR_DATABASE_NET;Integrated Security=True";
+        private string connectionString = @"Data Source=LAPTOP-3VDNARNT;Initial Catalog=HR_DATABASE_NET;Integrated Security=True";
 
         public SqlConnection GetConnection()
         {
