@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -15,19 +16,17 @@ namespace DangNhap
 
     public partial class Form1 : Form
     {
-
+        Database db = new Database();
 
         public Form1()
         {
-            this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.AutoScaleMode = AutoScaleMode.None;
 
             InitializeComponent();
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.ClientSize = new Size(800, 500);
-            this.StartPosition = FormStartPosition.CenterScreen;
-
+            this.ClientSize = new Size(818, 497);
 
             // Đăng ký sự kiện
             btnOK.Click += BtnOK_Click;
@@ -55,12 +54,6 @@ namespace DangNhap
             }
         }
 
-        // Hàm kiểm tra - hiện tại dùng hardcoded để test
-        private bool IsValidCredentials(string user, string pass)
-        {
-            // Ví dụ: username = admin, password = 123
-            return user == "admin" && pass == "123";
-        }
         private void Form1_Shown(object sender, EventArgs e)
         {
             CreateRoundedPanel();
@@ -210,30 +203,50 @@ namespace DangNhap
             panel.Region = new Region(path);
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnOK_Click_1(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
-            string password = txtPassword.Text;
+            Database db = new Database(); // Khởi tạo helper
+            string user = txtUsername.Text;
+            string pass = txtPassword.Text;
 
-            // Kiểm tra tài khoản (cứng để test)
-            if (IsValidCredentials(username, password))
+            string query = "SELECT role, emp_id FROM users WHERE username = @u AND password = @p";
+            SqlParameter[] parameters = {
+        new SqlParameter("@u", user),
+        new SqlParameter("@p", pass)
+    };
+
+            DataTable dt = db.GetDataTable(query, parameters);
+
+            if (dt.Rows.Count > 0)
             {
-                // Tạo form 2
-                Form2 f2 = new Form2();
-                f2.Show();          // Mở Form2
-                this.Hide();         // Ẩn Form1
+                string role = dt.Rows[0]["role"].ToString();
+
+                // --- SỬA LỖI TẠI ĐÂY: Khai báo biến empId rõ ràng ---
+                string empId = "";
+                if (dt.Rows[0]["emp_id"] != DBNull.Value)
+                {
+                    empId = dt.Rows[0]["emp_id"].ToString();
+                }
+
+                MessageBox.Show("Đăng nhập thành công! Vai trò: " + role);
+                this.Hide();
+
+                if (role == "admin")
+                {
+                    Form2 adminForm = new Form2(); // Form admin
+                    adminForm.Show();
+                }
+                else if (role == "user")
+                {
+                    Form8 userForm = new Form8(empId);
+                    userForm.Show();
+                }
             }
             else
             {
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
             }
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
