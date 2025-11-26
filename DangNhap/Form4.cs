@@ -323,5 +323,7 @@ namespace DangNhap
                 if (c.HasChildren) ResizeAllControls(c, scaleX, scaleY);
             }
         }
+
+       
     }
 }
