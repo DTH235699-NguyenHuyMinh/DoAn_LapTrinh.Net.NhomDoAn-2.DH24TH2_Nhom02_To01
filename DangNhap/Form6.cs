@@ -55,12 +55,20 @@ namespace DangNhap
             }
         }
 
-        private void LoadDataToGrid()
+        // Sửa hàm này để nhận tham số keyword
+        private void LoadDataToGrid(string keyword = "")
         {
             try
             {
                 string query = "SELECT u.emp_id, e.fullname, u.username, u.password, u.role " +
                                "FROM users u JOIN employees e ON u.emp_id = e.id";
+
+                // Nếu có từ khóa tìm kiếm, thêm mệnh đề WHERE
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    // Tìm theo Mã NV hoặc Tên hoặc Username
+                    query += $" WHERE u.emp_id LIKE N'%{keyword}%' OR e.fullname LIKE N'%{keyword}%' OR u.username LIKE N'%{keyword}%'";
+                }
 
                 DataTable dt = db.GetDataTable(query);
                 dgvUsers.DataSource = dt;
@@ -71,6 +79,9 @@ namespace DangNhap
                 dgvUsers.Columns["username"].HeaderText = "Username";
                 dgvUsers.Columns["password"].HeaderText = "Mật Khẩu";
                 dgvUsers.Columns["role"].HeaderText = "Quyền";
+
+                // Ẩn cột mật khẩu (tùy chọn)
+                dgvUsers.Columns["password"].Visible = false;
 
                 ClearInputFields();
             }
@@ -273,6 +284,25 @@ namespace DangNhap
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text.Trim();
+
+            // Gọi hàm tải dữ liệu kèm từ khóa lọc
+            LoadDataToGrid(key);
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text.Trim();
+            LoadDataToGrid(key);
         }
     }
 }
